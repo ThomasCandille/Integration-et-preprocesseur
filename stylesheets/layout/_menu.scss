@@ -1,0 +1,125 @@
+.container{
+
+  &-menumanger{
+    width: 100vw;
+    height: 120vh;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 6fr;
+  }
+
+  &-passer-commande{
+    grid-column: 1/3;
+    grid-row: 1/2;
+
+    padding-block: 6vh;
+    padding-inline: 12vw;
+
+    >.passer-title{
+      @include font-settings(3vw, 800, $text-color-alternate, $font-family);
+      margin-bottom: 5vh;
+      text-align: center;
+    }
+
+    >.passer-text{
+      @include font-settings(1.5vw, 600, $text-color-2, $font-family);
+      line-height: 3vh;
+      text-align: center;
+      margin-bottom: 5vh;
+    }
+  }
+
+  &-menumanger-salade{
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(1fr);
+
+    padding-inline: 4vw;
+    padding-block: 2vh;
+
+    >.container-menus{
+      display: grid;
+
+      grid-template-columns: 3fr 1fr;
+      grid-template-rows: 1fr 1fr;
+
+      align-items: end;
+
+      padding-inline: 1vw;
+      padding-block: 2vh;
+
+      margin-block: 2vh;
+
+      >.menus-titles{
+        @include font-settings(1.5vw, 800, $text-color-alternate, $font-family);
+      }
+
+      >.menu-test{
+        @include font-settings(1.2vw, 400, $text-color-2, $font-family);
+      }
+
+      >.menus-prix{
+        @include font-settings(1.5vw, 600, $text-color-alternate, $font-family);
+
+        grid-row: 1/2;
+        grid-column: 2/3;
+        
+      }
+    }
+  }
+
+  &-aside{
+    
+    @include flex(center, center, false, column);
+
+    padding-block: 5vh;
+    padding-inline: 4vw;
+
+    >.container-bended-text{
+      height: 30vh;
+
+      >.text-verte{
+        @include font-settings(5vw, 300, $text-color-alternate, $font-family);
+        transform: rotate(-15deg);;
+        margin-bottom: 2vh;
+        }
+
+      >.text-bleue{
+        @include font-settings(5vw, 300, $text-color-alternate-2, $font-family);
+        transform: rotate(-15deg);
+      }
+    }
+
+    >.aside-text{
+      @include font-settings(1.5vw, 400, $text-color-2, $font-family);
+      line-height: 3vh;
+      text-align: center;
+      margin-bottom: 5vh;
+    }
+
+    >.aside-button{
+      @include font-settings(2vw, 600, $text-color, $font-family);
+      width: 25vw;
+      height: 6vh;
+      background-color: $text-color-alternate;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+
+      &:hover{
+        background-color: $text-color;
+        color: $text-color-alternate;
+        border: 2px solid $text-color-2;
+      }
+    }
+
+  }
+
+}
+
+.special-menu{
+  border: 2px solid $text-color-alternate;
+}

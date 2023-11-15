@@ -1,0 +1,55 @@
+
+
+.container{
+
+  &-background-landing{
+    height: 100vh;
+    width: 100vw;
+
+    position: relative;
+
+    background-image: url("../../img/Header_back.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &-landing{
+    height: 100vh;
+    width: 100vw;
+
+    background: linear-gradient(to right, rgba(96,160,216,50%),rgba(178,210,52,50%));
+  }
+
+  &-tagline{
+    height: 80vh;
+    width: 100vw;
+    
+    >.title-main{
+      @include font-settings(8vw, 1000, $text-color, $font-family);
+      position: absolute;
+      left: 35vw;
+      top: 35vh;
+    }
+
+    >.title-sub{
+      @include font-settings(3vw, 600, $text-color, $font-family);
+      position: absolute;
+      top: 50vh;
+      left: 45vw;
+      transform: rotate(-10deg);
+    }
+  }
+
+  &-socialmedia{
+    height: 10vh;
+    width: 100vw;
+    @include flex(center, flex-end, false, row);
+
+    >.icon{
+      margin-right: 1.5vw;
+    }
+  }
+
+}
+
