@@ -11,6 +11,7 @@
 
     >.header-logo{
       margin-left: 2vw;
+      width: 10vw
     }
   }
 
@@ -21,7 +22,7 @@
     height: 100%;
 
     > a{
-      @include font-settings(1.2vw, 600, $text-color, $font-family);
+      @include font-settings(1.2vw, 400, $text-color, $font-family);
     }    
 
     > a:hover{
@@ -35,10 +36,10 @@
     >.commander{
       margin-right: 2vw;
       width: 10vw;
-      height: 4vh;
+      height: 5vh;
       border-radius: 5px;
       border: none;
-      @include font-settings(1.2vw, 800, $text-color-alternate, $font-family);
+      @include font-settings(1.1vw, 600, $text-color-alternate, $font-family);
     }
 
     >.commander:hover{
@@ -47,4 +48,59 @@
       cursor: pointer;
     }
   }
+}
+
+@media screen and (max-width: 768px) {
+
+  .container{
+
+    &-header{
+      flex-direction: column;
+      height: 80vh;
+      align-items: flex-start;
+
+      >.header-logo{
+        margin: 2vw;
+        width: 20vw;
+      }
+    }
+
+    &-menu{
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: flex-start;
+      width: 80vw;
+      height: 40vh;
+      margin-left: 2vw;
+
+      > a{
+        @include font-settings(2.5vw, 500, $text-color, $font-family);
+      }    
+
+      > a:hover{
+        border-bottom: solid 2px white;
+        cursor: pointer;
+      }
+    }
+
+    &-button{
+
+      >.commander{
+        margin-left: 2vw;
+        width: 20vw;
+        height: 10vh;
+        border: none;
+        background-color: $text-color-alternate;
+        @include font-settings(2.5vw, 600, $text-color, $font-family);
+      }
+
+      >.commander:hover{
+        background-color: $text-color-alternate;
+        color: white;
+        cursor: pointer;
+      }
+    }
+
+  }
+  
 }

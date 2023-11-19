@@ -2,7 +2,12 @@
 
   &-menumanger{
     width: 100vw;
-    height: 120vh;
+    height: 150vh;
+
+    background-image: url("../../img/pattern.png");
+    background-repeat: repeat;
+    background-size: cover;
+  
     
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -17,13 +22,13 @@
     padding-inline: 12vw;
 
     >.passer-title{
-      @include font-settings(3vw, 800, $text-color-alternate, $font-family);
+      @include font-settings(3vw, 700, $text-color-alternate, $font-family);
       margin-bottom: 5vh;
       text-align: center;
     }
 
     >.passer-text{
-      @include font-settings(1.5vw, 600, $text-color-2, $font-family);
+      @include font-settings(1.3vw, 500, $text-color-2, $font-family);
       line-height: 3vh;
       text-align: center;
       margin-bottom: 5vh;
@@ -40,6 +45,17 @@
     padding-inline: 4vw;
     padding-block: 2vh;
 
+    >.menus-vendu{
+      @include flex(flex-end, flex-end, false, column);
+      >p{
+        height: 3vh;
+        width: 10vw;
+        text-align: center;
+        @include font-settings(1vw, 300, $text-color, $font-family);
+        background-color: $text-color-alternate;
+      }
+    }
+
     >.container-menus{
       display: grid;
 
@@ -54,7 +70,7 @@
       margin-block: 2vh;
 
       >.menus-titles{
-        @include font-settings(1.5vw, 800, $text-color-alternate, $font-family);
+        @include font-settings(1.3vw, 600, $text-color-alternate, $font-family);
       }
 
       >.menu-test{
@@ -62,12 +78,44 @@
       }
 
       >.menus-prix{
-        @include font-settings(1.5vw, 600, $text-color-alternate, $font-family);
+        @include font-settings(1.3vw, 600, $text-color-alternate, $font-family);
 
         grid-row: 1/2;
         grid-column: 2/3;
         
       }
+      
+    }
+
+    >.special-menu{
+      display: grid;
+
+      grid-template-columns: 3fr 1fr;
+      grid-template-rows: 1fr 1fr;
+
+      align-items: end;
+
+      padding-inline: 1vw;
+      padding-block: 2vh;
+
+      margin-bottom: 2vh;
+
+      >.menus-titles{
+        @include font-settings(1.3vw, 600, $text-color-alternate, $font-family);
+      }
+
+      >.menu-test{
+        @include font-settings(1.2vw, 400, $text-color-2, $font-family);
+      }
+
+      >.menus-prix{
+        @include font-settings(1.3vw, 600, $text-color-alternate, $font-family);
+
+        grid-row: 1/2;
+        grid-column: 2/3;
+        
+      }
+      
     }
   }
 
@@ -83,18 +131,20 @@
 
       >.text-verte{
         @include font-settings(5vw, 300, $text-color-alternate, $font-family);
-        transform: rotate(-15deg);;
+        transform: rotate(-12deg);;
         margin-bottom: 2vh;
+        font-style: italic
         }
 
       >.text-bleue{
         @include font-settings(5vw, 300, $text-color-alternate-2, $font-family);
-        transform: rotate(-15deg);
+        transform: rotate(-12deg);
+        font-style: italic
       }
     }
 
     >.aside-text{
-      @include font-settings(1.5vw, 400, $text-color-2, $font-family);
+      @include font-settings(1.4vw, 400, $text-color-2, $font-family);
       line-height: 3vh;
       text-align: center;
       margin-bottom: 5vh;
@@ -102,8 +152,8 @@
 
     >.aside-button{
       @include font-settings(2vw, 600, $text-color, $font-family);
-      width: 25vw;
-      height: 6vh;
+      width: 24vw;
+      height: 7vh;
       background-color: $text-color-alternate;
       border-radius: 5px;
       border: none;
@@ -123,3 +173,75 @@
 .special-menu{
   border: 2px solid $text-color-alternate;
 }
+
+@media screen and (max-width:768px){
+
+  .container{
+    
+      &-passer-commande{
+
+        >.passer-title{
+
+          @include font-settings(6vw, 700, $text-color-alternate, $font-family);
+          margin-bottom: 5vh;
+          text-align: center;
+        }
+
+        >.passer-text{
+          @include font-settings(1.8vw, 400, $text-color-2, $font-family);
+          line-height: 3vh;
+          text-align: center;
+          margin-bottom: 5vh;
+        }
+      }
+
+      &-menumanger-salade{
+        >.menus-vendu{
+          >p{
+            height: 3vh;
+            width: 20vw;
+            text-align: center;
+            @include font-settings(1.8vw, 400, $text-color, $font-family);
+            background-color: $text-color-alternate;
+          }
+        }
+        >.container-menus{
+
+          >.menus-titles{
+            @include font-settings(2vw, 600, $text-color-alternate, $font-family);
+          }
+    
+          >.menu-test{
+            @include font-settings(2vw, 400, $text-color-2, $font-family);
+          }
+    
+          >.menus-prix{
+            @include font-settings(2vw, 600, $text-color-alternate, $font-family);
+    
+            grid-row: 1/2;
+            grid-column: 2/3;
+            
+          }
+
+        }
+        >.special-menu{
+
+          >.menus-titles{
+            @include font-settings(2vw, 600, $text-color-alternate, $font-family);
+          }
+    
+          >.menu-test{
+            @include font-settings(2vw, 400, $text-color-2, $font-family);
+          }
+    
+          >.menus-prix{
+            @include font-settings(2vw, 600, $text-color-alternate, $font-family);
+    
+            grid-row: 1/2;
+            grid-column: 2/3;
+            
+          }
+        }
+      }
+    }
+  }

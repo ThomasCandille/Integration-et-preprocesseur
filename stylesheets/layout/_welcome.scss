@@ -1,10 +1,25 @@
 .container{
 
-  &-welcome{
+  &-background-walcome{
     height: 100vh;
     width: 100vw;
 
     background-image: url("../../img/61842.png");
+
+    background-repeat: repeat;
+    background-size: cover;
+
+  }
+
+  &-welcome{
+    height: 100vh;
+    width: 100vw;
+
+    background-image: url("../../img/salade-detoure.png");
+
+    background-repeat: no-repeat;
+    background-position: 60vw 0vh;
+    background-color: rgba($color: #000000, $alpha: 0);
 
     @include flex(center, center, false, row);
 
@@ -13,23 +28,23 @@
       height: 60vh;
 
       >.information-titre{
-        @include font-settings(3vw, 800, $text-color-alternate, $font-family);
+        @include font-settings(3vw, 600, $text-color-alternate, $font-family);
         margin-bottom: 6vh;
       
       }
 
       >.information-text{
-        @include font-settings(1.5vw, 600, $text-color-2, $font-family);
+        @include font-settings(1.3vw, 300, $text-color-2, $font-family);
         line-height: 4vh;
         margin-bottom: 8vh;
       }
 
       >.information-button{
-        @include font-settings(2vw, 600, $text-color, $font-family);
+        @include font-settings(1.5vw, 600, $text-color, $font-family);
         width: 15vw;
-        height: 6vh;
+        height: 7vh;
         background-color: $text-color-alternate;
-        border-radius: 5px;
+        border-radius: 10px;
         border: none;
         cursor: pointer;
 
@@ -56,4 +71,51 @@
   left: 60vw;
   top: 100vh;
   z-index: 1;
+}
+
+@media screen and (max-width: 768px) {
+
+  .container{
+
+    &-welcome{
+
+      width: 100vw;
+      height: 100vh;
+
+      &-information{
+        width: 80vw;
+        height: 60vh;
+
+        >.information-titre{
+          @include font-settings(6vw, 600, $text-color-alternate, $font-family);
+          margin-bottom: 6vh;
+        
+        }
+  
+        >.information-text{
+          @include font-settings(2.5vw, 300, $text-color-2, $font-family);
+          line-height: 4vh;
+          margin-bottom: 8vh;
+        }
+  
+        >.information-button{
+          @include font-settings(2.5vw, 600, $text-color, $font-family);
+          width: 20vw;
+          height: 10vh;
+          background-color: $text-color-alternate;
+          border-radius: 10px;
+          border: none;
+          cursor: pointer;
+  
+          &:hover{
+            background-color: $text-color;
+            color: $text-color-alternate;
+            border: 2px solid $text-color-2;
+          }
+        }
+      }
+
+    }
+  }
+  
 }
