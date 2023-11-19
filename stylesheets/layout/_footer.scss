@@ -1,3 +1,39 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
+
+
+.container{
+
+  &-footer{
+
+    @include flex(center, space-around, false, row);
+
+    height: 25vh;
+    width: 100vw;
+
+    background-color: $text-color-alternate;
+
+    >.footer-logo{
+      width: 18vw;
+    }
+
+    >.footer-list{
+
+      height: 16vh;
+
+      @include flex(center, center, false, column);
+
+      >.text-title{
+        @include font-settings(1.5vw, 700, $text-color, $font-family);
+        margin-bottom: 2vh;
+      }
+
+      >.text-normal{
+        @include font-settings(1.1vw, 500, $text-color, $font-family);
+        margin-bottom: 1vh;
+      }
+    }
+  }
+
+}

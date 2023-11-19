@@ -26,18 +26,19 @@
     width: 100vw;
     
     >.title-main{
-      @include font-settings(8vw, 1000, $text-color, $font-family);
+      @include font-settings(8vw, 500, $text-color, $font-family);
       position: absolute;
       left: 35vw;
       top: 35vh;
     }
 
     >.title-sub{
-      @include font-settings(3vw, 600, $text-color, $font-family);
+      @include font-settings(3vw, 400, $text-color, $font-family);
       position: absolute;
       top: 50vh;
       left: 45vw;
       transform: rotate(-10deg);
+      font-style: italic;
     }
   }
 
@@ -53,3 +54,10 @@
 
 }
 
+@media screen and (max-width: 768px) {
+  
+  .container-tagline{
+    height: 10vh;
+  }  
+
+}

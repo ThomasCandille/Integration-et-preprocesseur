@@ -10,7 +10,7 @@
     @include flex(center, center, false, row);
 
     &-img{
-      width: 30vw;
+      width: 40vw;
 
       margin-inline: 5vw;
 
@@ -29,7 +29,7 @@
 
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 2fr 5fr 1fr; ;
+      grid-template-rows: 2fr 3fr 1fr; ;
 
       &-text{
         grid-column: 1/3;
@@ -51,39 +51,79 @@
       }
 
       &-form{
+        
         grid-column: 1/3;
-        grid-row: 2/3;
+
+        height: 50vh;
 
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: repeat(4, 1fr);
+        grid-template-rows: 1fr 1fr 3fr;
+        gap: 2vh 2vw; 
 
-        >div{
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
+        >.form-nom{
+          height: 5vh;
+          grid-row: 1/2;
+          grid-column: 1/2;
 
-          >label{
-            @include font-settings(1.5vw, 600, $text-color-alternate, $font-family);
-            margin-bottom: 1vh;
+          >.form-text{
+            @include font-settings(1.5vw, 500, $text-color-alternate, $font-family);
+            font-style: italic;
+            margin-bottom: 0.5vh;
           }
 
-          >input{
+          >textarea{
+            width: 100%;
+          };
+        }
+        
+        >.form-prenom{
+          height: 5vh;
+          grid-row: 1/2;
+          grid-column: 2/3;
+
+          >.form-text{
+            @include font-settings(1.5vw, 500, $text-color-alternate, $font-family);
+            font-style: italic;
+            margin-bottom: 0.5vh;
+          }
+
+          >textarea{
+            width: 100%;
+          };
+        }
+
+        >.form-email{
+          height: 5vh;
+          grid-row: 2/3;
+          grid-column: 1/3;
+
+          >.form-text{
+            @include font-settings(1.5vw, 500, $text-color-alternate, $font-family);
+            font-style: italic;
+            margin-bottom: 0.5vh;
+          }
+
+          >textarea{
+            width: 100%;
+          };
+        }
+
+        >.form-avis{
+          height: 20vh;
+          grid-row: 3/4;
+          grid-column: 1/3;
+
+          >.form-text{
+            @include font-settings(1.5vw, 500, $text-color-alternate, $font-family);
+            font-style: italic;
+            margin-bottom: 0.5vh;
+          }
+
+          >textarea{
             width: 100%;
             height: 100%;
-          }
-        }
-
-        >.trois{
-          grid-column: 1/3;
-          grid-row: 2/3;
-          
-        }
-
-        >.quatre{
-          grid-column: 1/3;
-          grid-row: 3/4;
+          };
         }
 
       }
@@ -117,4 +157,12 @@
 
   }
 
+}
+
+@media screen and  (max-width: 768px){
+
+  .container-form-img{
+    display: none;
+  }
+  
 }

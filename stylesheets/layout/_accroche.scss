@@ -15,7 +15,7 @@
     @include flex(center, center, false, row);
 
     &-description{
-      width: 35vw;
+      width: 30vw;
       height: 70vh;
       background-color: rgba(178,210,52,80%);
 
@@ -27,23 +27,23 @@
       @include flex(center, center, false, column);
 
       >.description-title{
-        @include font-settings(4vw, 800, $text-color, $font-family);
+        @include font-settings(3vw, 600, $text-color, $font-family);
         margin-bottom: 5vh;
         text-align: center;
       }
 
       >.description-text{
-        @include font-settings(1.5vw, 600, $text-color, $font-family);
+        @include font-settings(1vw, 400, $text-color, $font-family);
         line-height: 3vh;
         text-align: center;
         margin-bottom: 5vh;
       }
 
       >.description-button{
-        @include font-settings(2vw, 600, $text-color, $font-family);
+        @include font-settings(1.3vw, 600, $text-color-alternate, $font-family);
         width: 15vw;
         height: 6vh;
-        background-color: $text-color-alternate;
+        background-color: $text-color;
         border-radius: 5px;
         border: none;
         cursor: pointer;
@@ -58,4 +58,52 @@
 
   }
 
+}
+
+@media screen and (max-width: 768px) {
+
+  .container{
+
+    &-accroche{
+
+      &-description{
+
+        width: 50vw;
+        margin-left: 20vw;
+        border-radius: 25px;
+
+        justify-content: space-around;
+
+        >.description-title{
+          @include font-settings(5vw, 600, $text-color, $font-family);
+          margin-bottom: 5vh;
+          text-align: center;
+        }
+  
+        >.description-text{
+          @include font-settings(2vw, 600, $text-color, $font-family);
+          line-height: 3vh;
+          text-align: center;
+          margin-bottom: 5vh;
+        }
+  
+        >.description-button{
+          @include font-settings(2.8vw, 600, $text-color-alternate, $font-family);
+          width: 25vw;
+          height: 10vh;
+          background-color: $text-color;
+          border-radius: 5px;
+          border: none;
+          cursor: pointer;
+  
+          &:hover{
+            background-color: $text-color;
+            color: $text-color-alternate;
+            border: 2px solid $text-color-2;
+          }
+        }
+      }
+    }
+  }
+  
 }
